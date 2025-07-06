@@ -1,0 +1,108 @@
+/* 基本スタイル */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+/* 画面の基本設定 */
+.screen {
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.screen.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 設定画面のスタイル */
+.setup-container {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+}
+
+h1 {
+    margin-top: 0;
+    letter-spacing: 2px;
+}
+
+.input-group {
+    margin: 20px 0;
+}
+
+.input-group label {
+    margin-right: 15px;
+    font-size: 1.2rem;
+}
+
+input[type="number"] {
+    width: 60px;
+    padding: 8px;
+    font-size: 1.2rem;
+    text-align: center;
+    border: 1px solid #555;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+}
+
+#start-button {
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    background-color: #e63946;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+#start-button:hover {
+    background-color: #d62828;
+}
+
+/* ゲーム画面のスタイル */
+#game-screen {
+    background-color: #000;
+}
+
+#gun-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* 画像が歪まないように調整 */
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent; /* タップ時のハイライトを消す */
+}
+
+/* 結果表示オーバーレイ */
+#result-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15vw; /* 画面幅に応じたフォントサイズ */
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    pointer-events: none; /* 下の画像をタップできるようにする */
+    opacity: 0;
+    transition: opacity 0.2s;
+}
